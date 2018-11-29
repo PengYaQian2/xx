@@ -29,8 +29,9 @@ public class DetailController {
    
    @RequestMapping("/querys")
 	public String querys(@RequestParam(value="invid",required=false)
-	int invid,@RequestParam(value="num",required=false,defaultValue="1")int num,
+	int invid,@RequestParam(value="numss",required=false,defaultValue="1")int num,
 	Model model,HttpSession httpSession){
+	   
 		 try {
 			 int count = detailService.count(invid);
 				Page page = new Page();
