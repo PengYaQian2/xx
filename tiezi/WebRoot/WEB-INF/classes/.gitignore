@@ -1,0 +1,6 @@
+/controller/
+/mapper/
+/pojo/
+/service/
+/spring-mvc.xml
+/spring-mybatis.xml

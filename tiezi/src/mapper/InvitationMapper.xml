@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.InvitationMapper">
+	<select id="query" resultType="Invitation">
+		select * from Invitation
+		<where>
+			<if test="title!=null and title!=''">
+				and title like CONVAT ('%',#{title},'%')
+			</if>
+		</where>
+		limit #{currNo},#{size}
+	</select>
+
+	<select id="count" resultType="_int">
+		select count(*) from Invitation
+		<where>
+			<if test="title!=null and title!=''">
+				and title=#{title}
+			</if>
+		</where>
+	</select>
+
+	<delete id="delete" parameterType="_int">
+		delete from Invitation where id=#{id}
+	</delete>
+</mapper>
+
+
